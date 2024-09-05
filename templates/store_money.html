@@ -7,36 +7,38 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
             margin: 0;
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            color: #fff;
         }
 
         .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             max-width: 400px;
             width: 100%;
             text-align: center;
+            backdrop-filter: blur(10px);
         }
 
         h2 {
-            font-size: 24px;
+            font-size: 28px;
             margin-bottom: 20px;
             color: #333;
         }
 
         input, button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 4px;
+            width: calc(100% - 20px); /* Adjusted width for input fields */
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 6px;
             border: 1px solid #ddd;
             font-size: 16px;
         }
@@ -46,10 +48,16 @@
             color: white;
             border: none;
             cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         button:hover {
             background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
         }
 
         p {
@@ -64,7 +72,7 @@
             }
 
             h2 {
-                font-size: 20px;
+                font-size: 24px;
             }
 
             input, button {
@@ -79,10 +87,13 @@
 </head>
 <body>
     <div class="container">
-        <h2>Welcome to store money</h2>
+        <h2>Welcome to Store Money</h2>
         <input type="number" id="moneyInput" placeholder="Enter amount to store">
         <button class="btn" onclick="storeValue()">Store Value</button>
         <button class="btn" onclick="getValue()">Get Stored Value</button>
+        <form action="/" method="post">
+            <button type="submit">Main</button>
+        </form>
         <p id="storedValue"></p>
         <p id="status"></p>
     </div>
